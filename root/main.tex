@@ -1,6 +1,9 @@
-**Theorem.** The set of all natural numbers $n$ that equal the sum of the factorials of their own decimal digits is exactly $\{1, 2, 145, 40585\}$.
+**Theorem.** The set of natural numbers equal to their own digit factorial sum is exactly $\{1, 2, 145, 40585\}$. That is,
+$$\{\, n \in \mathbb{N} \mid n = \sigma(n) \,\} = \{1,\, 2,\, 145,\, 40585\},$$
+where $\sigma(n)$ denotes the sum of the factorials of the decimal digits of $n$.
 
-More precisely, define $f(n) = \sum_{d \,\in\, \text{digits}(n)} d!$, where $\text{digits}(n)$ denotes the list of base-10 digits of $n$. Then
-$$\{ n \in \mathbb{N} \mid n = f(n) \} = \{1, 2, 145, 40585\}.$$
+*Proof.* We prove the two inclusions separately.
 
-*Proof.* Unsolved.
+$(\subseteq)$ Let $n \in \mathbb{N}$ satisfy $n = \sigma(n)$. By \textbf{Upper Bound}, every fixed point of $\sigma$ satisfies $n \leq 2540160$. Since $n$ is bounded, \textbf{Finite Verification} applies and yields that $n = \sigma(n)$ holds if and only if $n \in \{1, 2, 145, 40585\}$; in particular, $n$ belongs to the right-hand set.
+
+$(\supseteq)$ Let $n \in \{1, 2, 145, 40585\}$. Each such element trivially satisfies $n \leq 2540160$, so \textbf{Finite Verification} again applies. It confirms that every element of $\{1, 2, 145, 40585\}$ is indeed a fixed point of $\sigma$, i.e.\ $n = \sigma(n)$. $\blacksquare$
